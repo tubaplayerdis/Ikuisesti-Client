@@ -5,7 +5,7 @@
 #include <TlHelp32.h>
 #include "mem.h"
 #include "proc.h"
-#include "ConsoleShortcuts.h";
+#include "ConsoleShortcuts.h"
 
 DWORD WINAPI HackThread(HMODULE hModule) 
 {
