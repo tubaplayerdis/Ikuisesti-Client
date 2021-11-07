@@ -25,7 +25,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
     int h = 1337;
     int* Healthadd = &h;
 
-    //penis
+    //Big Juicy Penis
 
     //hack loop
     while (true)
