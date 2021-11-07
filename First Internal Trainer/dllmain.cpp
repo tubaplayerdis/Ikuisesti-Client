@@ -41,20 +41,21 @@ DWORD WINAPI HackThread(HMODULE hModule)
         if (GetAsyncKeyState(VK_NUMPAD1) & 1)
         {     
                         
-            std::cout << "Freezing health...\n";            
+            std::cout << "Toggled Freeze Health\n";            
             bHealth = !bHealth;
             std::cout << "Health Freeze = " << bHealth << "\n";
         }
 
         if (GetAsyncKeyState(VK_NUMPAD2) & 1)
         {
-            std::cout << "Freezing ammo...\n";
+            std::cout << "Toggled Freeze Ammo\n";
             bAmmo = !bAmmo;
             std::cout << "Ammo Freeze = " << bAmmo << "\n";
         }
 
         if (GetAsyncKeyState(VK_NUMPAD3) & 1)
         {
+            penis("Toggled Recoil");
             bRecoil = !bRecoil;
 
             if (bRecoil) 
