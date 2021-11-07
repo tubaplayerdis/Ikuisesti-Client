@@ -5,6 +5,7 @@
 #include <TlHelp32.h>
 #include "mem.h"
 #include "proc.h"
+#include "ConsoleShortcuts.h";
 
 DWORD WINAPI HackThread(HMODULE hModule) 
 {
@@ -16,6 +17,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
     std::cout << "Console has started :)\n\n";
 
     std::cout << "NUMPAD 1 = Toggle Health Freeze\nNUMPAD 2 = Toggle Ammo Freeze\nNUMPAD 3 = Recoil Disable\nNUMAPD 4 = Revert Health to 100\nNUMPAD 5 = Revert Ammo to 100\nEND = Eject\n";
+    //penis("testing"); 
 
     //get module base
     uintptr_t moduleBase = (uintptr_t)GetModuleHandle(L"ac_client.exe");
@@ -96,6 +98,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
             else
             {
                 std::cout << "Player Pointer does not exist, please get into the game\n";
+                
             }
             
         }

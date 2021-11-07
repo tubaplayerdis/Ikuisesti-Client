@@ -22,6 +22,9 @@
     <Filter Include="pch">
       <UniqueIdentifier>{f2d8b16d-efae-439f-be94-fc13022252c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="etc">
+      <UniqueIdentifier>{fcf986ac-353d-4288-8136-2d8dfa2d2842}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mem.h">
@@ -36,6 +39,9 @@
     <ClInclude Include="pch.h">
       <Filter>pch</Filter>
     </ClInclude>
+    <ClInclude Include="ConsoleShortcuts.h">
+      <Filter>etc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -49,6 +55,9 @@
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>pch</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleShortcuts.cpp">
+      <Filter>etc</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

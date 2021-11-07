@@ -151,12 +151,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ConsoleShortcuts.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="mem.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="proc.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConsoleShortcuts.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="mem.cpp" />
     <ClCompile Include="pch.cpp">
