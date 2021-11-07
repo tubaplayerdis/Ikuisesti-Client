@@ -1,3 +1,3 @@
 #pragma once
 
-void penis(std::string value);
+void penis(const char * value);

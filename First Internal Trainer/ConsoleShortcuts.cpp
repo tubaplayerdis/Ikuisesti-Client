@@ -1,7 +1,8 @@
-#include "pch.h";
+#include "pch.h"
 #include <Windows.h>
-#include <iostream>
 
-void penis(std::string value) {
+
+
+void penis(const char * value) {
 	std::cout << value << "\n";
 }
