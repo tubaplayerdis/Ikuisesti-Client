@@ -3,6 +3,7 @@
 
 
 
-void penis(const char * value) {
+void PrintLine(const char * value) {
 	std::cout << value << "\n";
 }
+

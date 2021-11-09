@@ -1,3 +1,3 @@
 #pragma once
 
-void penis(const char * value);
+void PrintLine(const char * value);
