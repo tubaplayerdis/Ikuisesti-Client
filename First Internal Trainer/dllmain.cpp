@@ -40,6 +40,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
     std::cout << "Console has started :)\n\n";
 
     std::cout << "NUMPAD 1 = Toggle Health Freeze\nNUMPAD 2 = Toggle Ammo Freeze\nNUMPAD 3 = Recoil Disable\nNUMAPD 4 = Revert Health to 100\nNUMPAD 5 = Revert Ammo to 100\nEND = Eject\n";
+    
     //penis("testing");
 
     //get module base
@@ -97,9 +98,9 @@ DWORD WINAPI HackThread(HMODULE hModule)
         {
             std::cout << "Reverting Health(Will not work if freeze is on)\n";
             uintptr_t* localPlayerPtr = (uintptr_t*)(moduleBase + 0x10f4f4);
-            DWORD* localPlayerAddress = (DWORD*)(0x50F4F4);
+            DWORD* localPlayerAddress = (DWORD*)(0x50F4F4); 
             int* health = (int*)(*localPlayerAddress + 0xF8);
-            if (localPlayerPtr)
+            if (localPlayerAddress)
             {
                 *health = 100;
             }
@@ -130,7 +131,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
         //continues writes/freeze
 
         uintptr_t* localPlayerPtr = (uintptr_t*)(moduleBase + 0x10f4f4);
-        DWORD* localPlayerAddress = (DWORD*)(0x50F4F4);
+        DWORD* localPlayerAddress = (DWORD*)(0x50F4F4); //use this if LocalPlayerPtr does not
         int* health = (int*)(*localPlayerAddress + 0xF8);
         if (localPlayerPtr)
         {
@@ -141,12 +142,12 @@ DWORD WINAPI HackThread(HMODULE hModule)
 
             if (bAmmo)
             {
-                uintptr_t ammoAddr = mem::FindDMAAddy(moduleBase + 0x10f4f4, { 0x374, 0x14, 0x0 });
+                uintptr_t ammoAddr = mem::FindDMAAddy(moduleBase + 0x10f4f4, { 0x374, 0x14, 0x0 });//{} is for multiple addreses
                 int* ammo = (int*)ammoAddr;
                 *ammo = 1337;
 
                 //or this 
-                //*(int*)mem::FindDMAAddy(moduleBase + 0x10f4f4, { 0x374, 0x14, 0x0 }) = 1337;
+                //*(int*)mem::FindDMAAddy(moduleBase + 0x10f4f4, { 0x374, 0x14, 0x0 }) = 1337; //USE THIS PLEASE
             }
 
             
