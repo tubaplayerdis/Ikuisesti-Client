@@ -9,6 +9,20 @@
 
 DWORD WINAPI HackThread(HMODULE hModule) 
 {
+    //To use structure dissasembler first use memory view on USE THIS PUT INTO then pess tools dissect data structures then you can look at cool stuff
+
+    //also offset 0000 = 0x0
+
+    //look at this tutorial for refesh
+
+    //USE 0x as represent 00 or 000 the the digits after the 0 count not the others
+    // i think put 0x before anthting
+
+    //Raw Values
+    // 0150 = current ammo = 0x150
+    // 0128 clip
+    // 0158 = grenade
+
     //Player Base : "ac_client.exe" + 0x109B74 / 0x509B74
     //Player Health : 0xF8
     //Player Primary : 0x128
@@ -17,8 +31,9 @@ DWORD WINAPI HackThread(HMODULE hModule)
     //Player SecondaryClip : 0x13C
     //Player Grenade Ammo : 0x158
     //Player Armor : 0xFC
-    //Player Position XY : 0x4
-    //Player Position XY : 0x8
+    //Player Position XY : 0x4 - might be z
+    //Player Position XY : 0x8 - Might be x 
+    //Plyaer pos y 0x3c
     //Player Position Z : 0xC
     //Player View Angle Verticle : 0x44
     //Player View Angle Horizontal : 0x40
@@ -97,7 +112,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
         if (GetAsyncKeyState(VK_NUMPAD4) & 1) 
         {
             std::cout << "Reverting Health(Will not work if freeze is on)\n";
-            uintptr_t* localPlayerPtr = (uintptr_t*)(moduleBase + 0x10f4f4);
+            uintptr_t* localPlayerPtr = (uintptr_t*)(moduleBase + 0x10f4f4); //0x10f4f4
             DWORD* localPlayerAddress = (DWORD*)(0x50F4F4); 
             int* health = (int*)(*localPlayerAddress + 0xF8);
             if (localPlayerAddress)
@@ -128,6 +143,22 @@ DWORD WINAPI HackThread(HMODULE hModule)
             
         }
 
+        if (GetAsyncKeyState(VK_NUMPAD6) & 1) 
+        {
+            PrintLine("moving location to 10 y");
+            uintptr_t* localPlayerPtr = (uintptr_t*)(moduleBase + 0x10f4f4);
+            if (localPlayerPtr)
+            {
+                float* playery = (float*)(*localPlayerPtr + 0x3c); // get addres is use = then sets it
+                std::cout << *playery;
+                *playery = 10;
+            }
+            else 
+            {
+                PrintLine("Player pointer does not exist");
+            }
+        }
+
         //continues writes/freeze
 
         uintptr_t* localPlayerPtr = (uintptr_t*)(moduleBase + 0x10f4f4);
@@ -142,7 +173,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
 
             if (bAmmo)
             {
-                uintptr_t ammoAddr = mem::FindDMAAddy(moduleBase + 0x10f4f4, { 0x374, 0x14, 0x0 });//{} is for multiple addreses
+                uintptr_t ammoAddr = mem::FindDMAAddy(moduleBase + 0x10f4f4, { 0x374, 0x14, 0x0 });//{} is for aadresing pointers then addresing pointers then the value, does not have to be p->p->A
                 int* ammo = (int*)ammoAddr;
                 *ammo = 1337;
 
