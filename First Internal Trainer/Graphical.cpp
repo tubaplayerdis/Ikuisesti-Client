@@ -17,9 +17,10 @@
 * 1.6 = Continue
 * 1.7 = Help
 * 1.8 = OK
-* 1.9 = ClosedBox  
+* 1.9 = ClosedBox
+* 2 = broken
 */
-float Graphical::ShowBox(LPCTSTR Message, LPCTSTR Caption, UINT Type) {
+double Graphical::ShowBox(LPCTSTR Message, LPCTSTR Caption, UINT Type) {
 	switch (Type)
 	{		
 		case MB_ABORTRETRYIGNORE: {
@@ -137,6 +138,8 @@ float Graphical::ShowBox(LPCTSTR Message, LPCTSTR Caption, UINT Type) {
 				default: return 1.9;
 			}
 		}
+
+		default: return 2;
 	}
 }
 
