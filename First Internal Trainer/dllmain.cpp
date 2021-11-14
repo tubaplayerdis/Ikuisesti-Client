@@ -6,6 +6,7 @@
 #include "mem.h"
 #include "proc.h"
 #include "ConsoleShortcuts.h"
+#include "Graphical.h"
 
 DWORD WINAPI HackThread(HMODULE hModule) 
 {
@@ -51,6 +52,11 @@ DWORD WINAPI HackThread(HMODULE hModule)
     AllocConsole();
     FILE* f;
     freopen_s(&f, "CONOUT$", "w", stdout);
+
+    
+
+    Graphical g;
+    if(g.ShowBox("Test", "Testing caption", MB_OK) == )
 
     std::cout << "Console has started :)\n\n";
 
@@ -158,6 +164,8 @@ DWORD WINAPI HackThread(HMODULE hModule)
                 PrintLine("Player pointer does not exist");
             }
         }
+
+        
 
         //continues writes/freeze
 

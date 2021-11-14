@@ -20,11 +20,11 @@
 * 1.9 = ClosedBox
 * 2 = broken
 */
-double Graphical::ShowBox(LPCTSTR Message, LPCTSTR Caption, UINT Type) {
+double Graphical::ShowBox(LPCSTR Message, LPCSTR Caption, UINT Type) {
 	switch (Type)
 	{		
 		case MB_ABORTRETRYIGNORE: {
-			switch (MessageBox(NULL, Message, Caption, Type))
+			switch (MessageBoxA(NULL, Message, Caption, Type))
 			{
 				case IDABORT: {
 					return 1.1;
@@ -43,7 +43,7 @@ double Graphical::ShowBox(LPCTSTR Message, LPCTSTR Caption, UINT Type) {
 		}
 
 		case MB_CANCELTRYCONTINUE: {
-			switch (MessageBox(NULL, Message, Caption, Type))
+			switch (MessageBoxA(NULL, Message, Caption, Type))
 			{
 				case IDCANCEL: {
 					return 1.4;
@@ -62,21 +62,21 @@ double Graphical::ShowBox(LPCTSTR Message, LPCTSTR Caption, UINT Type) {
 		}
 
 		case MB_HELP: {
-			if (MessageBox(NULL, Message, Caption, Type) == IDHELP) {
+			if (MessageBoxA(NULL, Message, Caption, Type) == IDHELP) {
 				return 1.7;
 			}
 			else return 1.9;
 		}
 
 		case MB_OK: {
-			if (MessageBox(NULL, Message, Caption, Type) == IDHELP) {
+			if (MessageBoxA(NULL, Message, Caption, Type) == IDHELP) {
 				return 1.8;
 			}
 			else return 1.9;
 		}
 
 		case MB_OKCANCEL: {
-			switch (MessageBox(NULL, Message, Caption, Type))
+			switch (MessageBoxA(NULL, Message, Caption, Type))
 			{
 				case IDOK: {
 					return 1.8;
@@ -91,7 +91,7 @@ double Graphical::ShowBox(LPCTSTR Message, LPCTSTR Caption, UINT Type) {
 		}
 
 		case MB_RETRYCANCEL: {
-			switch (MessageBox(NULL, Message, Caption, Type))
+			switch (MessageBoxA(NULL, Message, Caption, Type))
 			{
 				case IDRETRY: {
 					return 1.2;
@@ -107,7 +107,7 @@ double Graphical::ShowBox(LPCTSTR Message, LPCTSTR Caption, UINT Type) {
 		}
 
 		case MB_YESNO: {
-			switch (MessageBox(NULL, Message, Caption, Type))
+			switch (MessageBoxA(NULL, Message, Caption, Type))
 			{
 				case IDYES: {
 					return 1;
@@ -122,7 +122,7 @@ double Graphical::ShowBox(LPCTSTR Message, LPCTSTR Caption, UINT Type) {
 		}
 
 		case MB_YESNOCANCEL: {
-			switch (MessageBox(NULL, Message, Caption, Type))
+			switch (MessageBoxA(NULL, Message, Caption, Type))
 			{
 				case IDYES: {
 					return 1;

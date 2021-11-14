@@ -19,7 +19,7 @@ class Graphical {
 		* 1.9 = ClosedBox
 		* 2 = broken
 		*/
-		double ShowBox(LPCTSTR Message, LPCTSTR Caption, UINT Type);
+		double ShowBox(LPCSTR Message, LPCSTR Caption, UINT Type);
 
 
 };
