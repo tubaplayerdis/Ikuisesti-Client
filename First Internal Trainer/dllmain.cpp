@@ -56,7 +56,9 @@ DWORD WINAPI HackThread(HMODULE hModule)
     
 
     Graphical g;
-    if(g.ShowBox("Test", "Testing caption", MB_OK) == )
+    if (g.ShowBox("Test", "Testing caption", MB_OK) == 1.8) {
+
+    }
 
     std::cout << "Console has started :)\n\n";
 
