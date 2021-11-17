@@ -7,6 +7,7 @@
 #include "proc.h"
 #include "ConsoleShortcuts.h"
 #include "Graphical.h"
+#include "CoordChange.h"
 
 DWORD WINAPI HackThread(HMODULE hModule) 
 {
@@ -56,9 +57,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
     
 
     Graphical g;
-    if (g.ShowBox("Test", "Testing caption", MB_OK) == 1.8) {
-
-    }
+    g.ShowBoxS("Welcome to TubaPLayer's internal trianer for Assault Cube!", "Start Message", MB_OK);
 
     std::cout << "Console has started :)\n\n";
 
@@ -68,6 +67,9 @@ DWORD WINAPI HackThread(HMODULE hModule)
 
     //get module base
     uintptr_t moduleBase = (uintptr_t)GetModuleHandle(L"ac_client.exe");
+    HANDLE processHandle = GetCurrentProcess();
+
+    uintptr_t* localPlayerPtrG = (uintptr_t*)(moduleBase + 0x10f4f4);// global offset
 
     bool bHealth = false, bAmmo = false, bRecoil = false;
 
@@ -167,7 +169,11 @@ DWORD WINAPI HackThread(HMODULE hModule)
             }
         }
 
-        
+        if (GetAsyncKeyState(VK_NUMPAD7) & 1)
+        {
+            testDialog();
+            PrintLine("Enabled numpad 7");
+        }
 
         //continues writes/freeze
 

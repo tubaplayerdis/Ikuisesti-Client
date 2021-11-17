@@ -20,6 +20,9 @@ class Graphical {
 		* 2 = broken
 		*/
 		double ShowBox(LPCSTR Message, LPCSTR Caption, UINT Type);
+		void ShowBoxS(LPCSTR Message, LPCSTR Caption, UINT Type);
+		// 0 = dead 1 = good
+		
 
 
 };

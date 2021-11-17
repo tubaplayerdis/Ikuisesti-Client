@@ -143,3 +143,13 @@ double Graphical::ShowBox(LPCSTR Message, LPCSTR Caption, UINT Type) {
 	}
 }
 
+void Graphical::ShowBoxS(LPCSTR Message, LPCSTR Caption, UINT Type) {
+	MessageBoxA(NULL, Message, Caption, Type);
+	
+}
+
+
+
+
+
+

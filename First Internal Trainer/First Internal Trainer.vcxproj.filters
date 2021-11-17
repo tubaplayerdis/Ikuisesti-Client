@@ -25,6 +25,9 @@
     <Filter Include="etc">
       <UniqueIdentifier>{fcf986ac-353d-4288-8136-2d8dfa2d2842}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Commands">
+      <UniqueIdentifier>{809b327e-11c7-4997-ab80-cc779958c1ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mem.h">
@@ -44,6 +47,12 @@
     </ClInclude>
     <ClInclude Include="Graphical.h">
       <Filter>etc</Filter>
+    </ClInclude>
+    <ClInclude Include="CoordChange.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -65,5 +74,13 @@
     <ClCompile Include="Graphical.cpp">
       <Filter>etc</Filter>
     </ClCompile>
+    <ClCompile Include="CoordChange.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="First Internal Trainer.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
