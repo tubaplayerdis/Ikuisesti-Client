@@ -28,6 +28,9 @@
     <Filter Include="Commands">
       <UniqueIdentifier>{809b327e-11c7-4997-ab80-cc779958c1ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Forms">
+      <UniqueIdentifier>{59e36e0e-9fe8-4344-a158-d6067e369c04}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mem.h">
@@ -54,6 +57,9 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TeleportLocation.h">
+      <Filter>Forms</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -76,6 +82,9 @@
     </ClCompile>
     <ClCompile Include="CoordChange.cpp">
       <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="TeleportLocation.cpp">
+      <Filter>Forms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@
 #include "proc.h"
 #include "ConsoleShortcuts.h"
 #include "Graphical.h"
-#include "CoordChange.h"
+#include "TeleportLocation.h"
 
 DWORD WINAPI HackThread(HMODULE hModule) 
 {
@@ -59,7 +59,11 @@ DWORD WINAPI HackThread(HMODULE hModule)
     Graphical g;
     g.ShowBoxS("Welcome to TubaPLayer's internal trianer for Assault Cube!", "Start Message", MB_OK);
 
-    std::cout << "Console has started :)\n\n";
+    std::cout << "Console has started :) Along with Form Prep :))\n\n";
+
+    System::Windows::Forms::Application::EnableVisualStyles();
+    System::Windows::Forms::Application::SetCompatibleTextRenderingDefault(false);
+
 
     std::cout << "NUMPAD 1 = Toggle Health Freeze\nNUMPAD 2 = Toggle Ammo Freeze\nNUMPAD 3 = Recoil Disable\nNUMAPD 4 = Revert Health to 100\nNUMPAD 5 = Revert Ammo to 100\nEND = Eject\n";
     
@@ -171,7 +175,10 @@ DWORD WINAPI HackThread(HMODULE hModule)
 
         if (GetAsyncKeyState(VK_NUMPAD7) & 1)
         {
-            testDialog();
+            using namespace System::Windows::Forms;
+            FirstInternalTrainer::TeleportLocation p;
+            Application::Run(% p);
+            
             PrintLine("Enabled numpad 7");
         }
 
@@ -219,7 +226,11 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 {
     switch (ul_reason_for_call)
     {
+
     case DLL_PROCESS_ATTACH: {
+
+        DisableThreadLibraryCalls(hModule); //THIS IS WHY CLR WORKS OMG WTF
+
         CloseHandle(CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)HackThread, hModule, 0, nullptr));
     }
     case DLL_THREAD_ATTACH:

@@ -1,4 +1,4 @@
 #pragma once
 #include "pch.h"
 
-void testDialog();
+void SetCoordinates(float X, float Y, float Z);

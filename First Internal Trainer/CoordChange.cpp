@@ -16,3 +16,9 @@ uintptr_t* localPlayerPtr = (uintptr_t*)(moduleBase + 0x10f4f4);
 
 
 
+void SetCoordinates(float X, float Y, float Z)
+{
+	
+
+
+}
