@@ -13,12 +13,27 @@
 uintptr_t moduleBase = (uintptr_t)GetModuleHandle(L"ac_client.exe");
 uintptr_t* localPlayerPtr = (uintptr_t*)(moduleBase + 0x10f4f4);
 
-
+// int* health = (int*)(*localPlayerAddress + 0xF8); example
 
 
 void SetCoordinates(float X, float Y, float Z)
 {
-	
+	if (localPlayerPtr)
+	{
+		
+	}
+	else {
+		std::cout << "Local Player Pointer does not exist\n";
+	}
 
 
 }
+
+float ReturnXvalue() {
+	HANDLE processHandle = GetCurrentProcess();
+	//ReadProcessMemory(processHandle, )
+
+
+	return 1.2;
+}
+

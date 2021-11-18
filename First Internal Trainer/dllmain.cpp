@@ -175,9 +175,17 @@ DWORD WINAPI HackThread(HMODULE hModule)
 
         if (GetAsyncKeyState(VK_NUMPAD7) & 1)
         {
+            uintptr_t* localPlayerPtr = (uintptr_t*)(moduleBase + 0x10f4f4);
             using namespace System::Windows::Forms;
-            FirstInternalTrainer::TeleportLocation p;
-            Application::Run(% p);
+
+            if (localPlayerPtr) {
+                FirstInternalTrainer::TeleportLocation p;
+                Application::Run(% p);
+            }
+            else {
+                PrintLine("Local Player Pointer does not exist");
+            }
+            
             
             PrintLine("Enabled numpad 7");
         }
