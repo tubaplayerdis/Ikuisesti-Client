@@ -195,13 +195,17 @@ DWORD WINAPI HackThread(HMODULE hModule)
         if (GetAsyncKeyState(VK_NUMPAD8) & 1)
         {
             switch (CreateOutputCashe()) {
-                case 0: PrintLine("falied to create direcotry");
+                case 0: 
+                    PrintLine("falied to create direcotry");
 
-                case 1: PrintLine("The direcotry and file existed");
+                case 1: 
+                    PrintLine("The direcotry and file existed");
 
-                case 2: PrintLine("The direcotry existed and the file was created");
+                case 2: 
+                    PrintLine("The direcotry existed and the file was created");
 
-                case 3: PrintLine("Direcotry and file were created");
+                case 3: 
+                    PrintLine("Direcotry and file were created");
             
             }
         }
