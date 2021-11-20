@@ -91,7 +91,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;FIRSTINTERNALTRAINER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;FIRSTINTERNALTRAINER_EXPORTS;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -161,8 +161,12 @@
   <ItemGroup>
     <ClInclude Include="ConsoleShortcuts.h" />
     <ClInclude Include="CoordChange.h" />
+    <ClInclude Include="CustomLog.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="framework.h" />
     <ClInclude Include="Graphical.h" />
+    <ClInclude Include="LogFrameWork.h" />
     <ClInclude Include="mem.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="proc.h" />
@@ -174,8 +178,10 @@
   <ItemGroup>
     <ClCompile Include="ConsoleShortcuts.cpp" />
     <ClCompile Include="CoordChange.cpp" />
+    <ClCompile Include="CustomLog.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Graphical.cpp" />
+    <ClCompile Include="LogFrameWork.cpp" />
     <ClCompile Include="mem.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -197,6 +203,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CustomLog.resx">
+      <DependentUpon>CustomLog.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeleportLocation.resx">
       <DependentUpon>TeleportLocation.h</DependentUpon>
     </EmbeddedResource>

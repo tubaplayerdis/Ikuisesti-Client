@@ -8,6 +8,7 @@
 #include "ConsoleShortcuts.h"
 #include "Graphical.h"
 #include "TeleportLocation.h"
+#include "LogFrameWork.h";
 
 DWORD WINAPI HackThread(HMODULE hModule) 
 {
@@ -189,6 +190,20 @@ DWORD WINAPI HackThread(HMODULE hModule)
             
             
             PrintLine("Enabled numpad 7");
+        }
+
+        if (GetAsyncKeyState(VK_NUMPAD8) & 1)
+        {
+            switch (CreateOutputCashe()) {
+                case 0: PrintLine("falied to create direcotry");
+
+                case 1: PrintLine("The direcotry and file existed");
+
+                case 2: PrintLine("The direcotry existed and the file was created");
+
+                case 3: PrintLine("Direcotry and file were created");
+            
+            }
         }
 
         //continues writes/freeze

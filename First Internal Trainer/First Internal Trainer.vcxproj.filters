@@ -31,6 +31,9 @@
     <Filter Include="Forms">
       <UniqueIdentifier>{59e36e0e-9fe8-4344-a158-d6067e369c04}</UniqueIdentifier>
     </Filter>
+    <Filter Include="LogSystem">
+      <UniqueIdentifier>{68bb5b47-0043-4079-afe5-39ca80f41d75}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mem.h">
@@ -60,6 +63,12 @@
     <ClInclude Include="TeleportLocation.h">
       <Filter>Forms</Filter>
     </ClInclude>
+    <ClInclude Include="CustomLog.h">
+      <Filter>LogSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="LogFrameWork.h">
+      <Filter>LogSystem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -85,6 +94,12 @@
     </ClCompile>
     <ClCompile Include="TeleportLocation.cpp">
       <Filter>Forms</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LogFrameWork.cpp">
+      <Filter>LogSystem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
