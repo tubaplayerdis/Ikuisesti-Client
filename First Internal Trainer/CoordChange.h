@@ -3,4 +3,6 @@
 
 void SetCoordinates(float X, float Y, float Z);
 
-float* ReturnXvalue()
+float ReturnXvalue();
+float ReturnYvalue();
+float ReturnZvalue();

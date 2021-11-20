@@ -148,6 +148,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
                 uintptr_t ammoAddr = mem::FindDMAAddy(moduleBase + 0x10f4f4, { 0x374, 0x14, 0x0 });
                 int* ammo = (int*)ammoAddr;
                 *ammo = 100;
+                //std::cout << *ammo; //put * in front to get value, do not put * in front to get addres
             }
             else
             {
@@ -199,6 +200,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
         {
             if (bHealth) 
             {
+                
                 *health = *Healthadd;
             }
 
