@@ -23,10 +23,13 @@ void ClearOuputCashe()
 */
 int CreateOutputCashe()
 {
-	const char* appdatafolderpath = getenv("APPDATA"); // no \ and end of path
-	appdatafolderpath =+ "\\TubaPlayer";
-	const char* filename = appdatafolderpath;
-	filename =+ "\\cashe1.txt";
+	std::string appdatafolderpath = getenv("APPDATA"); // no \ and end of path
+	std::cout << appdatafolderpath << "\n";
+	appdatafolderpath += "\\TubaPlayer";
+	std::string filename = appdatafolderpath;
+	filename += "\\cashe1.txt";
+	std::cout << appdatafolderpath << std::endl;
+	std::cout << filename << std::endl;
 	if (std::filesystem::is_directory(appdatafolderpath)) {
 		if (std::filesystem::exists(filename))
 		{
