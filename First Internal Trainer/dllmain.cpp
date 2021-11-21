@@ -243,9 +243,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
     //cleanup & eject
     
     fclose(f);
-    FreeConsole();
-    FreeLibrary(hModule);
-    ExitThread(0);
+    FreeConsole();    
     FreeLibraryAndExitThread(hModule, 0);
     return 0;
 }
