@@ -194,20 +194,20 @@ DWORD WINAPI HackThread(HMODULE hModule)
 
         if (GetAsyncKeyState(VK_NUMPAD8) & 1)
         {
-            switch (CreateOutputCashe()) {
-                case 0: 
-                    PrintLine("falied to create direcotry");
-
-                case 1: 
-                    PrintLine("The direcotry and file existed");
-
-                case 2: 
-                    PrintLine("The direcotry existed and the file was created");
-
-                case 3: 
-                    PrintLine("Direcotry and file were created");
-            
+            int lol = CreateOutputCashe();
+            if (lol == 0) {
+                PrintLine("Error with creating cashe");
             }
+            else if (lol == 1) {
+                PrintLine("Directory and file existed");
+            }
+            else if (lol == 2) {
+                PrintLine("Directory existed and file was created");
+            }
+            else if (lol == 3) {
+                PrintLine("Directory and file were created");
+            }
+            
         }
 
         //continues writes/freeze
@@ -241,8 +241,11 @@ DWORD WINAPI HackThread(HMODULE hModule)
     }
     
     //cleanup & eject
+    
     fclose(f);
     FreeConsole();
+    FreeLibrary(hModule);
+    ExitThread(0);
     FreeLibraryAndExitThread(hModule, 0);
     return 0;
 }

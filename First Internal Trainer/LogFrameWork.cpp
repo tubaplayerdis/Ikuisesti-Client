@@ -24,12 +24,12 @@ void ClearOuputCashe()
 int CreateOutputCashe()
 {
 	std::string appdatafolderpath = getenv("APPDATA"); // no \ and end of path
-	std::cout << appdatafolderpath << "\n";
+	//std::cout << appdatafolderpath << "\n";
 	appdatafolderpath += "\\TubaPlayer";
 	std::string filename = appdatafolderpath;
 	filename += "\\cashe1.txt";
-	std::cout << appdatafolderpath << std::endl;
-	std::cout << filename << std::endl;
+	//std::cout << appdatafolderpath << std::endl;
+	//std::cout << filename << std::endl;
 	if (std::filesystem::is_directory(appdatafolderpath)) {
 		if (std::filesystem::exists(filename))
 		{
@@ -68,6 +68,34 @@ int CreateOutputCashe()
 		}
 	}
 	
+}
+
+/*
+* 0 = Both File and Direcotry Exist
+* 1 = Directory Exists
+* 2 = Cashe and Direcotry do not exist
+*/
+int CheckCasheFileAndDirecotry()
+{
+	std::string appdatafolderpath = getenv("APPDATA");
+	appdatafolderpath += "\\TubaPlayer";
+	std::string filename = appdatafolderpath;
+	filename += "\\cashe1.txt";
+	if (std::filesystem::is_directory(appdatafolderpath)) 
+	{
+		if (std::filesystem::exists(filename))
+		{
+			return 0;
+		}
+		else
+		{
+			return 1;
+		}
+	}
+	else 
+	{
+		return 2;
+	}
 }
 
 const char* ReadOuptutCashe()
