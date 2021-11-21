@@ -17,3 +17,5 @@ int CreateOutputCashe();
 
 
 const char* ReadOuptutCashe();
+
+int CheckCasheFileAndDirecotry();

@@ -171,6 +171,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="proc.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SlowMoHack.h" />
     <ClInclude Include="TeleportLocation.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -190,6 +191,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="proc.cpp" />
+    <ClCompile Include="SlowMoHack.cpp" />
     <ClCompile Include="TeleportLocation.cpp" />
   </ItemGroup>
   <ItemGroup>
