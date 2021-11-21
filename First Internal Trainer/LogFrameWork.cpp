@@ -94,7 +94,7 @@ int CheckCasheFileAndDirecotry()
 	}
 	else 
 	{
-		return 2;
+		return 2;//test
 	}
 }
 
