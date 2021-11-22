@@ -8,7 +8,8 @@
 #include "ConsoleShortcuts.h"
 #include "Graphical.h"
 #include "TeleportLocation.h"
-#include "LogFrameWork.h";
+#include "LogFrameWork.h"
+#include "CustomLog.h"
 
 DWORD WINAPI HackThread(HMODULE hModule) 
 {
@@ -209,6 +210,15 @@ DWORD WINAPI HackThread(HMODULE hModule)
             }
             
         }
+
+        if (GetAsyncKeyState(VK_NUMPAD9) & 1)
+        {
+            using namespace System::Windows::Forms;
+            FirstInternalTrainer::CustomLog p;
+            Application::Run(% p);
+
+        }
+
 
         //continues writes/freeze
 

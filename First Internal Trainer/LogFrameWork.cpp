@@ -1,5 +1,8 @@
 #include "pch.h"
+#include "Graphical.h"
 #include <filesystem>
+#include <fstream>
+#include <iostream>
 #include <fstream>
 
 
@@ -9,9 +12,53 @@ void AddToOutputCashe(const char Value)
 
 }
 
+/*
+* 0 = Both File and Direcotry Exist
+* 1 = Directory Exists
+* 2 = Cashe and Direcotry do not exist
+*/
+int CheckCasheFileAndDirecotry()
+{
+	std::string appdatafolderpath = getenv("APPDATA");
+	appdatafolderpath += "\\TubaPlayer";
+	std::string filename = appdatafolderpath;
+	filename += "\\cashe1.txt";
+	if (std::filesystem::is_directory(appdatafolderpath))
+	{
+		if (std::filesystem::exists(filename))
+		{
+			return 0;
+		}
+		else
+		{
+			return 1;
+		}
+	}
+	else
+	{
+		return 2;//test
+	}
+}
+
 void ClearOuputCashe()
 {
+	std::string appdatafolderpath = getenv("APPDATA"); // no \ and end of path
+	//std::cout << appdatafolderpath << "\n";
+	appdatafolderpath += "\\TubaPlayer";
+	std::string filename = appdatafolderpath;
+	filename += "\\cashe1.txt";
 
+
+	if (CheckCasheFileAndDirecotry() == 0) {
+		std::ofstream myfile;
+		myfile.open(filename);
+		myfile << "";
+		myfile.close();
+	}
+	else {
+		Graphical g;
+		g.ShowBox("There was no cashe file to clear", "Error", MB_OK);
+	}
 }
 
 /*
@@ -70,38 +117,26 @@ int CreateOutputCashe()
 	
 }
 
-/*
-* 0 = Both File and Direcotry Exist
-* 1 = Directory Exists
-* 2 = Cashe and Direcotry do not exist
-*/
-int CheckCasheFileAndDirecotry()
+
+
+
+
+
+
+std::string ReadOuptutCashe()
 {
+	using namespace std;
 	std::string appdatafolderpath = getenv("APPDATA");
 	appdatafolderpath += "\\TubaPlayer";
 	std::string filename = appdatafolderpath;
 	filename += "\\cashe1.txt";
-	if (std::filesystem::is_directory(appdatafolderpath)) 
-	{
-		if (std::filesystem::exists(filename))
-		{
-			return 0;
-		}
-		else
-		{
-			return 1;
-		}
-	}
-	else 
-	{
-		return 2;//test
-	}
-}
+	ifstream file(filename);
+	string s;
 
-const char* ReadOuptutCashe()
-{
+	copy(istream_iterator<char>{ file >> noskipws }, {}, back_inserter(s));
+
+	return s;
 	
-	return "penis";
 }
 
 

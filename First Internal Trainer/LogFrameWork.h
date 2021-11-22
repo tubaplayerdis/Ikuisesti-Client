@@ -16,6 +16,6 @@ void ClearOuputCashe();
 int CreateOutputCashe();
 
 
-const char* ReadOuptutCashe();
+std::string ReadOuptutCashe();
 
 int CheckCasheFileAndDirecotry();
