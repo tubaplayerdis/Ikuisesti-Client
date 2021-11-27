@@ -144,3 +144,19 @@ float ReturnZvalue() {
 	
 }
 
+/*
+* int lol = CreateOutputCashe();
+            if (lol == 0) {
+                PrintLine("Error with creating cashe");
+            }
+            else if (lol == 1) {
+                PrintLine("Directory and file existed");
+            }
+            else if (lol == 2) {
+                PrintLine("Directory existed and file was created");
+            }
+            else if (lol == 3) {
+                PrintLine("Directory and file were created");
+            }
+*/
+
