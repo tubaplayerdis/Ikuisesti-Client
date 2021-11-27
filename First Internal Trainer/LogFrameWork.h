@@ -1,6 +1,6 @@
 #pragma once
 
-void AddToOutputCashe(const char Value);
+void AddToOutputCashe(const char* Value);
 
 
 void ClearOuputCashe();

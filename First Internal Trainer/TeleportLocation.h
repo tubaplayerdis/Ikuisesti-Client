@@ -279,9 +279,12 @@ namespace FirstInternalTrainer {
 		double Yc = Decimal::ToDouble(numericUpDownY->Value);
 		double Zc = Decimal::ToDouble(numericUpDownZ->Value);
 		
-		std::cout << Xc << Yc << Zc << "\n";
+		Coordinates Coords;
+		Coords.X = Xc;
+		Coords.Y = Yc;
+		Coords.Z = Zc;
 
-		SetCoordinates(Xc, Yc, Zc);
+		SetCoordinates(Coords);
 		this->Close();
 
 	}

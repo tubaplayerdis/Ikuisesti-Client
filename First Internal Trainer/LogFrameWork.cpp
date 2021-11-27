@@ -7,9 +7,24 @@
 
 
 
-void AddToOutputCashe(const char Value) 
+void AddToOutputCashe(const char* Value) 
 {
+	if (CheckCasheFileAndDirecotry == 0) {
+		std::string appdatafolderpath = getenv("APPDATA");
+		appdatafolderpath += "\\TubaPlayer";
+		std::string filename = appdatafolderpath;
+		filename += "\\cashe1.txt";
+		std::ofstream outfile;
 
+		outfile.open(filename, std::ios_base::app); // append instead of overwrite
+		outfile << Value;
+		outfile << "\r\n";
+	}
+	else
+	{
+		std::cout << "Did not add to cashe because no file existed";
+	}
+	
 }
 
 /*

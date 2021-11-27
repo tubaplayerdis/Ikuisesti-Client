@@ -189,7 +189,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
                 PrintLine("Local Player Pointer does not exist");
             }
             
-            
+            AddToOutputCashe("Pressed Numpad 7");
             PrintLine("Enabled numpad 7");
         }
 

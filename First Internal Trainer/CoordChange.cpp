@@ -77,12 +77,17 @@ DWORD* localPlayerAddress = (DWORD*)(0x50F4F4);
 // int* health = (int*)(*localPlayerAddress + 0xF8); example
 
 
-void SetCoordinates(float X, float Y, float Z)
+void SetCoordinates(Coordinates Values)
 {
 	
 	
 	if (localPlayerPtrG)
 	{
+		float X = Values.X;
+		float Y = Values.Y;
+		float Z = Values.Z;
+
+
 		float* Xpos = (float*)(*localPlayerAddress + 0x0038);
 		float* Ypos = (float*)(*localPlayerAddress + 0x003C);
 		float* Zpos = (float*)(*localPlayerAddress + 0x0040);
