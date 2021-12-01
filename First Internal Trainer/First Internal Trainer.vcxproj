@@ -165,13 +165,16 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="framework.h" />
+    <ClInclude Include="GameControl.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Graphical.h" />
     <ClInclude Include="LogFrameWork.h" />
     <ClInclude Include="mem.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="proc.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="SlowMoHack.h" />
+    <ClInclude Include="Corsshair.h" />
     <ClInclude Include="TeleportLocation.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -181,6 +184,7 @@
     <ClCompile Include="CoordChange.cpp" />
     <ClCompile Include="CustomLog.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="GameControl.cpp" />
     <ClCompile Include="Graphical.cpp" />
     <ClCompile Include="LogFrameWork.cpp" />
     <ClCompile Include="mem.cpp" />
@@ -191,7 +195,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="proc.cpp" />
-    <ClCompile Include="SlowMoHack.cpp" />
+    <ClCompile Include="Crosshair.cpp" />
     <ClCompile Include="TeleportLocation.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +211,9 @@
   <ItemGroup>
     <EmbeddedResource Include="CustomLog.resx">
       <DependentUpon>CustomLog.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameControl.resx">
+      <DependentUpon>GameControl.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeleportLocation.resx">
       <DependentUpon>TeleportLocation.h</DependentUpon>

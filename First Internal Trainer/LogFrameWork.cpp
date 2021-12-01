@@ -35,21 +35,21 @@ int CheckCasheFileAndDirecotry()
 
 void AddToOutputCashe(const char* Value) 
 {
-	if (CheckCasheFileAndDirecotry == 0) {
+	//if (CheckCasheFileAndDirecotry == 0) {
 		std::string appdatafolderpath = getenv("APPDATA");
 		appdatafolderpath += "\\TubaPlayer";
 		std::string filename = appdatafolderpath;
 		filename += "\\cashe1.txt";
-		std::ofstream outfile;
+		std::ofstream outfile(filename, std::ios_base::app);
 
-		outfile.open(filename, std::ios_base::app); // append instead of overwrite
+		 // append instead of overwrite
 		outfile << Value;
 		outfile << "\r\n";
-	}
-	else
-	{
-		std::cout << "Did not add to cashe because no file existed";
-	}
+	//}
+	//else
+	//{
+		//std::cout << "Did not add to cashe because no file existed";
+	//}
 	
 }
 

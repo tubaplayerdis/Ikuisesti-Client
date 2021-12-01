@@ -69,8 +69,11 @@
     <ClInclude Include="LogFrameWork.h">
       <Filter>LogSystem</Filter>
     </ClInclude>
-    <ClInclude Include="SlowMoHack.h">
+    <ClInclude Include="Corsshair.h">
       <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="GameControl.h">
+      <Filter>Forms</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -104,8 +107,11 @@
     <ClCompile Include="LogFrameWork.cpp">
       <Filter>LogSystem</Filter>
     </ClCompile>
-    <ClCompile Include="SlowMoHack.cpp">
+    <ClCompile Include="Crosshair.cpp">
       <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="GameControl.cpp">
+      <Filter>Forms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

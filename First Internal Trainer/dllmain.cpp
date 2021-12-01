@@ -10,7 +10,7 @@
 #include "TeleportLocation.h"
 #include "LogFrameWork.h"
 #include "CustomLog.h"
-#include "SlowMoHack.h"
+#include "GameControl.h"
 
 DWORD WINAPI HackThread(HMODULE hModule) 
 {
@@ -196,12 +196,15 @@ DWORD WINAPI HackThread(HMODULE hModule)
 
         if (GetAsyncKeyState(VK_NUMPAD8) & 1)
         {
-            std::cout << GetSpeedOfGame() << std::endl;
+            AddToOutputCashe("Opened Game Control Form");
+            FirstInternalTrainer::GameControl G;
+            System::Windows::Forms::Application::Run(% G);
             
         }
 
         if (GetAsyncKeyState(VK_NUMPAD9) & 1)
         {
+            AddToOutputCashe("Opened Log Form");
             using namespace System::Windows::Forms;
             FirstInternalTrainer::CustomLog p;
             Application::Run(% p);
