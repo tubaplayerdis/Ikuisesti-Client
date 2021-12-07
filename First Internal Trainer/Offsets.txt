@@ -51,3 +51,33 @@ __int32 h_CrosshairSize = 0x50F20C ;
 __int32 g_GameVersion = 0x510CF4 ;
 __int32 dbg_FlySpeed = 0x510148 ;
 __int32 EngineState_Test = 0x509BD8 ;
+
+
+
+
+
+
+
+THESE ADRESES USE THIS OFFSET
+
+Player Base:"ac_client.exe"+0x109B74/0x509B74
+Player Health:0xF8
+Player Primary:0x128
+Player Primary Clip:0x150
+Player Secondary:0x114
+Player SecondaryClip:0x13C
+Player Grenade Ammo:0x158
+Player Armor:0xFC
+Player Position XY:0x4
+Player Position XY:0x8
+Player Position Z:0xC
+Player View Angle Verticle:0x44
+Player View Angle Horizontal:0x40
+Time Between Knifes:0x160
+Pistol Timer:0x164
+Primary Timer:0x178
+Grenade Timer(?):0x180
+Mouse Button Down:0x224
+Entity Base:"ac_client.exe"+0x110D90/0x510D90
+TeamOffset1:0x204
+TeamOffset2:0x32C

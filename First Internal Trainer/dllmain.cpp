@@ -211,6 +211,11 @@ DWORD WINAPI HackThread(HMODULE hModule)
 
         }
 
+        if (GetAsyncKeyState(VK_LCONTROL) & 1)
+        {
+            std::cout << ReadOuptutCashe() << "\n";
+        }
+
 
         //continues writes/freeze
 

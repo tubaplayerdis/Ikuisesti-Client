@@ -1,6 +1,6 @@
 #pragma once
 #include "LogFrameWork.h"
-#include "Corsshair.h"
+#include "Armor.h"
 
 namespace FirstInternalTrainer {
 
@@ -73,7 +73,7 @@ namespace FirstInternalTrainer {
 			// numericUpDown1
 			// 
 			this->numericUpDown1->Location = System::Drawing::Point(8, 75);
-			this->numericUpDown1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->numericUpDown1->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown1->Name = L"numericUpDown1";
 			this->numericUpDown1->Size = System::Drawing::Size(232, 20);
 			this->numericUpDown1->TabIndex = 0;
@@ -84,14 +84,14 @@ namespace FirstInternalTrainer {
 			this->label1->Location = System::Drawing::Point(5, 6);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(71, 13);
+			this->label1->Size = System::Drawing::Size(64, 13);
 			this->label1->TabIndex = 1;
-			this->label1->Text = L"Crosshair size";
+			this->label1->Text = L"Armor Value";
 			// 
 			// CurrentGameSpeedNumeric
 			// 
 			this->CurrentGameSpeedNumeric->Location = System::Drawing::Point(8, 21);
-			this->CurrentGameSpeedNumeric->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->CurrentGameSpeedNumeric->Margin = System::Windows::Forms::Padding(2);
 			this->CurrentGameSpeedNumeric->Name = L"CurrentGameSpeedNumeric";
 			this->CurrentGameSpeedNumeric->ReadOnly = true;
 			this->CurrentGameSpeedNumeric->Size = System::Drawing::Size(232, 20);
@@ -109,14 +109,14 @@ namespace FirstInternalTrainer {
 			this->label2->Location = System::Drawing::Point(5, 60);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(92, 13);
+			this->label2->Size = System::Drawing::Size(53, 13);
 			this->label2->TabIndex = 3;
-			this->label2->Text = L"Set Crosshair Size";
+			this->label2->Text = L"Set Armor";
 			// 
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(8, 96);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(232, 29);
 			this->button1->TabIndex = 4;
@@ -133,7 +133,7 @@ namespace FirstInternalTrainer {
 			this->Controls->Add(this->CurrentGameSpeedNumeric);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->numericUpDown1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"GameControl";
 			this->Text = L"GameControl";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();

@@ -97,7 +97,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/Zc:twoPhase- /EHa %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -174,7 +174,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="proc.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Corsshair.h" />
+    <ClInclude Include="Armor.h" />
     <ClInclude Include="TeleportLocation.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -195,7 +195,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="proc.cpp" />
-    <ClCompile Include="Crosshair.cpp" />
+    <ClCompile Include="Armor.cpp" />
     <ClCompile Include="TeleportLocation.cpp" />
   </ItemGroup>
   <ItemGroup>

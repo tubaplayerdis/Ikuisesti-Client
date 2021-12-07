@@ -1,6 +1,6 @@
 
 #include "pch.h"
-#include "Corsshair.h"
+#include "Armor.h"
 #include "LogFrameWork.h"
 #include "mem.h"
 #include <string>
@@ -8,7 +8,7 @@
 #include <TlHelp32.h>
 
 uintptr_t moduleBaseH = (uintptr_t)GetModuleHandle(L"ac_client.exe");
-uintptr_t* localPlayerPtrH = (uintptr_t*)(moduleBaseH + 0x10f4f4);
+uintptr_t localPlayerPtrH = (uintptr_t)(moduleBaseH + 0x509B74);
 uintptr_t localPlayerAddressH = (uintptr_t)(moduleBaseH + 0x50F4F4);
 
 
@@ -19,16 +19,18 @@ void SetCrosshairSize(int size) {
 
 
 int GetCorsshairSize() {
+	
+
 	try 
 	{
-		uintptr_t speedv = mem::FindDMAAddy(localPlayerAddressH, { 0x50F20C });
+		uintptr_t speedv = mem::FindDMAAddy(localPlayerPtrH, { 0xFC });
 		int* SpeedValue = (int*)speedv;				
 		return *SpeedValue;
 	}
-	catch (std::exception& error) 
+	catch (...)
 	{
 		
-		AddToOutputCashe(error.what());
+		AddToOutputCashe("Memory Accces violation");
 	}
 	
 }

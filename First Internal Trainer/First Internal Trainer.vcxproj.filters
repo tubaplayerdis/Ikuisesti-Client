@@ -69,7 +69,7 @@
     <ClInclude Include="LogFrameWork.h">
       <Filter>LogSystem</Filter>
     </ClInclude>
-    <ClInclude Include="Corsshair.h">
+    <ClInclude Include="Armor.h">
       <Filter>Commands</Filter>
     </ClInclude>
     <ClInclude Include="GameControl.h">
@@ -107,7 +107,7 @@
     <ClCompile Include="LogFrameWork.cpp">
       <Filter>LogSystem</Filter>
     </ClCompile>
-    <ClCompile Include="Crosshair.cpp">
+    <ClCompile Include="Armor.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
     <ClCompile Include="GameControl.cpp">
