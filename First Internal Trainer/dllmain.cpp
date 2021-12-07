@@ -68,7 +68,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
     System::Windows::Forms::Application::SetCompatibleTextRenderingDefault(false);
 
 
-    std::cout << "NUMPAD 1 = Toggle Health Freeze\nNUMPAD 2 = Toggle Ammo Freeze\nNUMPAD 3 = Recoil Disable\nNUMAPD 4 = Revert Health to 100\nNUMPAD 5 = Revert Ammo to 100\nEND = Eject\n";
+    std::cout << "NUMPAD 1 = Toggle Health Freeze\nNUMPAD 2 = Toggle Ammo Freeze\nNUMPAD 3 = Recoil Disable\nNUMAPD 4 = Revert Health to 100\nNUMPAD 5 = Revert Ammo to 100\nNUMPAD 6 = make y value 10\nNUMAPD 7 = Teleport hack\nNUMPAD 8 = DEBUG SWITCH = GameControlForm\nNUMPAD 9 = Open log form\nLCONTROL = Print log to std::cout\nEND = Eject\n";
     
     
 

@@ -1,4 +1,4 @@
 #pragma once
 
-void SetCrosshairSize(int size);
-int GetCorsshairSize();
+void SetArmorSize(int size);
+int GetArmorSize();

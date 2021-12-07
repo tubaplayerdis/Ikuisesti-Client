@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "mem.h"
+#include "LogFrameWork.h"
 
 
 void mem::PatchEx(BYTE* dst, BYTE* src, unsigned int size, HANDLE hProcess)
@@ -43,7 +44,7 @@ void mem::Patch(BYTE* dst, BYTE* src, unsigned int size)
 	}
 	catch (...)
 	{
-		std::cout << "Memory Acces Violation" << std::endl;
+		AddToOutputCashe("Terminal Error in Patch");
 	}
 	
 }
@@ -59,7 +60,7 @@ void mem::Nop(BYTE* dst, unsigned int size)
 	}
 	catch (...)
 	{
-		std::cout << "Memory Acces Violation" << std::endl;
+		AddToOutputCashe("Terminal Error in Nop");
 	}
 	
 }
@@ -76,9 +77,9 @@ uintptr_t mem::FindDMAAddy(uintptr_t ptr, std::vector<unsigned int> offsets)
 		}
 		return addr;
 	}
-	catch (...)
+	catch(...)
 	{
-		std::cout << "Memory Acces Violation" << std::endl;
+		AddToOutputCashe("Ternminal Error in FindDMAAddy");
 	}
 	
 }

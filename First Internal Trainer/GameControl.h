@@ -72,29 +72,26 @@ namespace FirstInternalTrainer {
 			// 
 			// numericUpDown1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(8, 75);
-			this->numericUpDown1->Margin = System::Windows::Forms::Padding(2);
+			this->numericUpDown1->Location = System::Drawing::Point(12, 115);
 			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(232, 20);
+			this->numericUpDown1->Size = System::Drawing::Size(348, 26);
 			this->numericUpDown1->TabIndex = 0;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(5, 6);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(8, 9);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(64, 13);
+			this->label1->Size = System::Drawing::Size(97, 20);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Armor Value";
 			// 
 			// CurrentGameSpeedNumeric
 			// 
-			this->CurrentGameSpeedNumeric->Location = System::Drawing::Point(8, 21);
-			this->CurrentGameSpeedNumeric->Margin = System::Windows::Forms::Padding(2);
+			this->CurrentGameSpeedNumeric->Location = System::Drawing::Point(12, 32);
 			this->CurrentGameSpeedNumeric->Name = L"CurrentGameSpeedNumeric";
 			this->CurrentGameSpeedNumeric->ReadOnly = true;
-			this->CurrentGameSpeedNumeric->Size = System::Drawing::Size(232, 20);
+			this->CurrentGameSpeedNumeric->Size = System::Drawing::Size(348, 26);
 			this->CurrentGameSpeedNumeric->TabIndex = 2;
 			// 
 			// GetGameSpeedTimer
@@ -106,34 +103,32 @@ namespace FirstInternalTrainer {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(5, 60);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(8, 92);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(53, 13);
+			this->label2->Size = System::Drawing::Size(81, 20);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Set Armor";
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(8, 96);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->Location = System::Drawing::Point(12, 148);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(232, 29);
+			this->button1->Size = System::Drawing::Size(348, 45);
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"Apply";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &GameControl::button1_Click);
 			// 
 			// GameControl
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(761, 343);
+			this->ClientSize = System::Drawing::Size(1142, 528);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->CurrentGameSpeedNumeric);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->numericUpDown1);
-			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"GameControl";
 			this->Text = L"GameControl";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
@@ -144,15 +139,17 @@ namespace FirstInternalTrainer {
 		}
 #pragma endregion
 	private: System::Void GetGameSpeedTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
-		try
-		{
-			CurrentGameSpeedNumeric->Value = Convert::ToDecimal(GetCorsshairSize());
-		}
-		catch (std::exception p)
-		{
-			AddToOutputCashe(p.what());
-		}
+		
+		CurrentGameSpeedNumeric->Value = Convert::ToDecimal(GetArmorSize());
+		
 		
 	}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+
+	int idk = Convert::ToInt16(numericUpDown1->Value);
+	std::cout << idk << std::endl;
+	SetArmorSize(idk);
+}
 };
 }
