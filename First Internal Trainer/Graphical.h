@@ -22,7 +22,9 @@ class Graphical {
 		double ShowBox(LPCSTR Message, LPCSTR Caption, UINT Type);
 		void ShowBoxS(LPCSTR Message, LPCSTR Caption, UINT Type);
 		// 0 = dead 1 = good
-		
+
+
+		void DrawBoxInCorner(System::String^ Message);
 
 
 };

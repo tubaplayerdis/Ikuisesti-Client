@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <fstream>
+#define _CRT_SECURE_NO_WARNINGS
 
 /*
 * 0 = Both File and Direcotry Exist

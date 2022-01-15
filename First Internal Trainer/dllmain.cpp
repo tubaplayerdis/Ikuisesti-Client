@@ -1,8 +1,8 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "pch.h"
-#include <Windows.h>
+#include <windows.h>
+
 #include <iostream>
-#include <TlHelp32.h>
 #include "mem.h"
 #include "proc.h"
 #include "ConsoleShortcuts.h"
@@ -11,6 +11,7 @@
 #include "LogFrameWork.h"
 #include "CustomLog.h"
 #include "GameControl.h"
+#include "Offsets.h"
 
 DWORD WINAPI HackThread(HMODULE hModule) 
 {
@@ -54,11 +55,14 @@ DWORD WINAPI HackThread(HMODULE hModule)
 
     //Create Console
     AllocConsole();
-    FILE* f;
-    freopen_s(&f, "CONOUT$", "w", stdout);
-
-    
-
+    FILE* fp = nullptr;//No initalizer will cause memory leak
+    freopen_s(&fp, "CONIN$", "r", stdin); //more for stdin and out
+    freopen_s(&fp, "CONOUT$", "w", stdout);
+    freopen_s(&fp, "CONOUT$", "w", stderr);
+    /*
+    fclose(fp);
+    FreeConsole(); //To close console
+    */
     Graphical g;
     g.ShowBoxS("Welcome to TubaPLayer's internal trianer for Assault Cube!", "Start Message", MB_OK);
 
@@ -71,12 +75,11 @@ DWORD WINAPI HackThread(HMODULE hModule)
     std::cout << "NUMPAD 1 = Toggle Health Freeze\nNUMPAD 2 = Toggle Ammo Freeze\nNUMPAD 3 = Recoil Disable\nNUMAPD 4 = Revert Health to 100\nNUMPAD 5 = Revert Ammo to 100\nNUMPAD 6 = make y value 10\nNUMAPD 7 = Teleport hack\nNUMPAD 8 = DEBUG SWITCH = GameControlForm\nNUMPAD 9 = Open log form\nLCONTROL = Print log to std::cout\nEND = Eject\n";
     
     
-
     //get module base
     uintptr_t moduleBase = (uintptr_t)GetModuleHandle(L"ac_client.exe");
     HANDLE processHandle = GetCurrentProcess();
 
-    uintptr_t* localPlayerPtrG = (uintptr_t*)(moduleBase + 0x10f4f4);// global offset
+    uintptr_t* localPlayerPtrG = (uintptr_t*)(moduleBase + LOCAL_PLAYER_POINTER);// global offset
 
     bool bHealth = false, bAmmo = false, bRecoil = false;
 
@@ -249,7 +252,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
     
     //cleanup & eject
     
-    fclose(f);
+    fclose(fp);
     FreeConsole();    
     FreeLibraryAndExitThread(hModule, 0);
     return 0;

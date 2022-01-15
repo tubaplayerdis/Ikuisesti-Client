@@ -287,6 +287,9 @@ namespace FirstInternalTrainer {
 		SetCoordinates(Coords);
 		this->Close();
 
+
+		
+
 	}
 private: System::Void TeleportLocation_Load(System::Object^ sender, System::EventArgs^ e) {
 		

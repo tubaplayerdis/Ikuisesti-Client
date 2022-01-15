@@ -148,6 +148,11 @@ void Graphical::ShowBoxS(LPCSTR Message, LPCSTR Caption, UINT Type) {
 	
 }
 
+void Graphical::DrawBoxInCorner(System::String^ Message) {
+	
+
+}
+
 
 
 
