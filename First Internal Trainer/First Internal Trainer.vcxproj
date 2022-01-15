@@ -197,6 +197,7 @@
     <ClInclude Include="TeleportLocation.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Text.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleShortcuts.cpp" />
@@ -220,6 +221,7 @@
     <ClCompile Include="proc.cpp" />
     <ClCompile Include="Armor.cpp" />
     <ClCompile Include="TeleportLocation.cpp" />
+    <ClCompile Include="Text.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="First Internal Trainer.rc" />

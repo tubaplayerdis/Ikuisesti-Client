@@ -34,6 +34,9 @@
     <Filter Include="LogSystem">
       <UniqueIdentifier>{68bb5b47-0043-4079-afe5-39ca80f41d75}</UniqueIdentifier>
     </Filter>
+    <Filter Include="opengl">
+      <UniqueIdentifier>{a0070d06-7f00-49b6-baf2-f62b659fa734}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mem.h">
@@ -78,6 +81,9 @@
     <ClInclude Include="Offsets.h">
       <Filter>mem</Filter>
     </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -118,6 +124,9 @@
     </ClCompile>
     <ClCompile Include="glad.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>opengl</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
