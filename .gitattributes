@@ -2,7 +2,7 @@
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
 * text=auto
-"First Internal Trianer/glad.c" linguist-vendored
+First\ Internal\ Trainer/glad.c linguist-vendored
 ###############################################################################
 # Set default behavior for command prompt diff.
 #
